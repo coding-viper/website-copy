@@ -81,6 +81,10 @@ public static int Distance(string strand1, string strand2)
     }
 }
 ```
+### We can also use single line method
+```csharp
+public static int Distance(string f, string s) => (f.Length!=s.Length)? throw new ArgumentException("Invalid") : Enumerable.Range(0,f.Length).Count(ind=> f[ind]!=s[ind]);
+```
 
 Suggest that it might be useful to have the exceptional case handled first, as this is usually how C# methods are structured: error-handling first, than the regular implementation.
 
